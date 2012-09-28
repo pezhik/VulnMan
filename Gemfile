@@ -6,7 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'activerecord-jdbcpostgresql-adapter'
+#gem 'activerecord-jdbcpostgresql-adapter'
 
 
 # Gems used only for assets and not required
@@ -28,6 +28,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'minitest'
 end
 
 # To use ActiveModel has_secure_password
