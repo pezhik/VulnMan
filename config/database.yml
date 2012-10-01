@@ -7,18 +7,18 @@ development:
   encoding: unicode
   database: development
   username: postgres
-  password: 111111
+  password: q1q1q1q1
 
 test:
   adapter: postgresql
   encoding: unicode
   database: test
   username: postgres
-  password: 111111
+  password: q1q1q1q1
     
 production:
   adapter: postgresql
   encoding: unicode
   database: production
   username: postgres
-  password: 111111
+  password: q1q1q1q1
