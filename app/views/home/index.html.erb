@@ -1,0 +1,12 @@
+<h1>Welcome to the VulnMan</h1>
+
+<%= form_tag("/startscan", :method => "post") do %>
+	<%= label_tag(:q, "Server to Scan (IP/DNS):") %>
+  	<%= text_field_tag(:ip) %>
+  	<%= check_box_tag(:nmap) %>
+  	<%= label_tag(:nmap, "Nmap") %>
+  	<%= check_box_tag(:skipfish) %>
+  	<%= label_tag(:skipfish, "Nmap") %>
+  	  	
+  	<%= submit_tag("Start") %>
+<% end %>
