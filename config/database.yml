@@ -8,6 +8,8 @@ development:
   database: development
   username: postgres
   password: q1q1q1q1
+  host: 10.31.35.167
+  port: 5433
 
 test:
   adapter: postgresql
@@ -15,10 +17,14 @@ test:
   database: test
   username: postgres
   password: q1q1q1q1
-    
+  host: 10.31.35.167
+  port: 5433
+  
 production:
   adapter: postgresql
   encoding: unicode
   database: production
   username: postgres
   password: q1q1q1q1
+  host: 10.31.35.167
+  port: 5433

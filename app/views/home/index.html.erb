@@ -3,10 +3,15 @@
 <%= form_tag("/startscan", :method => "post") do %>
 	<%= label_tag(:q, "Server to Scan (IP/DNS):") %>
   	<%= text_field_tag(:ip) %>
+  	<br/>
   	<%= check_box_tag(:nmap) %>
   	<%= label_tag(:nmap, "Nmap") %>
+  	<br/>
   	<%= check_box_tag(:skipfish) %>
   	<%= label_tag(:skipfish, "Nmap") %>
-  	  	
+  	<br/> 
+  	<%= label_tag(:m, "E-Mail:") %>
+  	<%= text_field_tag(:email) %> 
+  	<br/>  	
   	<%= submit_tag("Start") %>
 <% end %>
