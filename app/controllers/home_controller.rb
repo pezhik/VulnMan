@@ -3,24 +3,42 @@ class HomeController < ApplicationController
   require 'net/http'
   
   def startscan
-    @ip=params[:ip]
-    @nmap=params[:nmap]
-    @skipfish=params[:skipfish]
     
+    #received params from form
+    ip=params[:ip]
+    email=params[:email]
+    nmap=params[:nmap]
+    skipfish=params[:skipfish]
+    nikto=params[:nikto]
+    wapiti=params[:wapiti]
+    wpscan=params[:wpscan]
+    joomscan=params[:joomscan]
     
-    #io = IO.popen("ls -lha")
-    #@output = io.read
-    #io.close
+    #concatinate @scanners via commas
+    @scanners=''
+    (nmap.to_i==1?@scanners=@scanners+'nmap,':false)
+    (skipfish.to_i==1?@scanners=@scanners+'skipfish,':false)
+    (nikto.to_i==1?@scanners=@scanners+'nikto,':false)
+    (wapiti.to_i==1?@scanners=@scanners+'wapiti,':false)
+    (wpscan.to_i==1?@scanners=@scanners+'wpscan,':false)
+    (joomscan.to_i==1?@scanners=@scanners+'joomscan,':false)
     
-    @query="/cgi-bin/start.pl?ip=@ip&nmap=@nmap&skipfish=@skipfish"
+    @scanners=@scanners[0..-2] #cutting last comma
+    
+        
+    @host="http://10.31.35.1671"
+    @query="/?&target=@ip&scanners=@scanners&email=@email"
 
-    connection = Net::HTTP.new("http://10.31.35.167")
-    response = ""
-    connection.start do |http|
-      req = Net::HTTP::Get.new("/")
-      @response = http.request(req)
-    end
-   
+    #result = Net::HTTP.get(URI.parse(@host+@query)) 
+    begin
+      @result = Net::HTTP.get(URI.parse(@host+@query))
+    rescue
+      @result="No connection. Error: #{$!}"
+    ensure 
+      #this_code_will_execute_always()
+  end
+     
+      
         
   end
 end

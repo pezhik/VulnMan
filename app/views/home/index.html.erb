@@ -8,8 +8,21 @@
   	<%= label_tag(:nmap, "Nmap") %>
   	<br/>
   	<%= check_box_tag(:skipfish) %>
-  	<%= label_tag(:skipfish, "Nmap") %>
+  	<%= label_tag(:skipfish, "skipfish") %>
   	<br/> 
+  	<%= check_box_tag(:nikto) %>
+  	<%= label_tag(:nikto, "nikto") %>
+  	<br/> 
+  	<%= check_box_tag(:wapiti) %>
+  	<%= label_tag(:wapiti, "wapiti") %>
+  	<br/> 
+  	<%= check_box_tag(:wpscan) %>
+  	<%= label_tag(:wpscan, "wpscan") %>
+  	<br/> 
+  	<%= check_box_tag(:joomscan) %>
+  	<%= label_tag(:joomscan, "joomscan") %>
+  	<br/> 
+  	  	
   	<%= label_tag(:m, "E-Mail:") %>
   	<%= text_field_tag(:email) %> 
   	<br/>  	
