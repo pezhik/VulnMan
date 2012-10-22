@@ -1,0 +1,16 @@
+<h1>Scanning of host <%= @ip -%> is started</h1>
+<p>You'll get a notification by E-mail: <%= @email -%></p>
+
+<p> Following scanners are started: </p>
+
+<%= @scanners -%>
+
+
+<p> GET-request details: </p> 
+
+<%= @host+@query -%>
+
+<br/>
+<br/>
+<br/>
+<a href="/home">Return to the main page</a>
