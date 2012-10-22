@@ -164,6 +164,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.8)
   rspec-rails
+  sass (~> 3.1)
   sass-rails (~> 3.2.3)
   thin
   turn

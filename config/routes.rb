@@ -1,9 +1,25 @@
 VulnMan::Application.routes.draw do
-  get "home/startscan"
+  get "home/index"
 
-  get "startscan" => "home#startscan"
+  get "home/reports"
+
+  get "home/scanstarted"
+
+  get "home/newscan"
   
-  post "startscan" => "home#startscan"
+  get "/reports" => "home#reports"
+
+  get "welcome/index"
+
+  get "home/startscan"
+  
+  get "home" => "home#index"
+  
+  get "newscan" => "home#newscan"
+
+  get "scanstarted" => "home#scanstarted"
+  
+  post "scanstarted" => "home#scanstarted"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -54,7 +70,7 @@ VulnMan::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'welcome#index'
 
   
   # See how all your routes lay out with "rake routes"
